@@ -1,0 +1,32 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Sample FirebaseUI App</title>
+  
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="login.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+  <script type="text/javascript">
+   
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+</head>
+<body>
+
+   <div id="login_div">
+      <h1>Tela de login</h1>
+      <input type="email" placeholder="E-mail..." id="email_field"/>
+      <input type="password" placeholder="Password..." id="password_field" />
+      <button onclick="login()">Fazer login</button>
+      <a>Ou faça login por esses aqui.</a>
+      <div id="firebaseui-auth-container"></div>
+   </div>  
+  
+   <div id="user_div">
+      <h1>Você está logado carai</h1>
+      <h1 id="user_para">iiiii</h1>
+      <button onclick="logout()">Sair</button>
+   </div>
+
+</body>
